@@ -3,7 +3,7 @@ body {
   min-height: 854px;
   background-image: url(https://i.pinimg.com/originals/d7/15/59/d71559139bb8fdec74491290994593d5.png);
   background-color: #000000;
-  background-repeat: repeat;
+ background-size: cover;
 }
 
 .container {
@@ -125,4 +125,55 @@ input[type="radio"] {
   background-color: hidden;
   width: 80%;
   height: 390px;
+}
+@media screen and (max-width:1280px){
+  #resultado {
+    left: 100px;
+    background-color: hidden;
+    width: 80%;
+  }
+  h2{
+    margin-top:30px
+  }
+}
+@media screen and (max-width:600px){
+  #resultado {
+    left: 13%;
+    background-color: red;
+    width: 80%;
+  }
+  h1{
+    font-size:15px;
+  }
+  h3{
+    font-size:10px;
+    margin-top:0px
+  }
+  h2{
+    font-size:15px;
+  }
+  img{
+    width:100px
+  }
+}
+@media screen and (max-width:350px){
+  #resultado {
+    left: 10%;
+    background-color: red;
+    width: 80%;
+  }
+  h1{
+    font-size:15px;
+  }
+  h3{
+    font-size:10px;
+    margin-top:0px
+  }
+  h2{
+    font-size:15px;
+  }
+  img{
+    margin-left: 10px;
+    width:100px
+  }
 }

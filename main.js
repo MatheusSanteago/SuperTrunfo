@@ -1,7 +1,7 @@
 var imported = document.createElement("script");
 imported.src = "data.js";
 document.head.appendChild(imported);
-
+var result = document.getElementById("resultado");
 //cards = JSON.parse(localStorage.getItem('jogadores') || '[]');
 var cardPC;
 var cardPlayer;
@@ -40,9 +40,6 @@ function drawCard() {
     cardPC = cards[n];
     var m = parseInt(Math.random() * cards.length);
     cardPlayer = cards[m];
-
-    console.log(cardPlayer);
-    console.log(cardPC);
   }
   if (cardPlayer == cardPC) {
     n = parseInt(Math.random() * cards.length);
@@ -81,26 +78,21 @@ function jogar() {
     var valuePC = cardPC.atributes[atribSelected];
 
     if (valuePlayer > valuePC) {
-      result.innerHTML = `<h1>Você ganhou do ${cardPC.nome} no atributo de ${atribSelected}</h1><h3>${cardPlayer.nome} VS ${cardPlayer.nome}</h3><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
+      result.innerHTML = `<h1>Você ganhou do ${cardPC.nome} no atributo de ${atribSelected}</h1><h3>${cardPlayer.nome} VS ${cardPC.nome}</h3><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
       result.style.backgroundColor = "#d3bfbf52";
       result.style.border = "solid 3px white";
       result.style.borderRadius = "20px";
-      setInterval(function() {result.style.display = "none"},2000);
-
     } else if (valuePC > valuePlayer) {
-      result.innerHTML = `<h1>Você perdeu para ${cardPC.nome} no atributo de ${atribSelected}</h1><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
+      result.innerHTML = `<h1>Você perdeu para ${cardPC.nome} no atributo de ${atribSelected}</h1><h3>${cardPlayer.nome} VS ${cardPC.nome}</h3><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
       result.style.backgroundColor = "#d3bfbf52";
       result.style.border = "solid 3px white";
       result.style.borderRadius = "20px";
-      setInterval(function() {result.style.display = "none"},2000);
     } else {
-      result.innerHTML = `<h1>Você empatou com ${cardPC.nome}</h1><h3>${cardPlayer.nome} VS ${cardPlayer.nome}</h3><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
+      result.innerHTML = `<h1>Você empatou com ${cardPC.nome} no atributo de ${atribSelected}</h1><h3>${cardPlayer.nome} VS ${cardPC.nome}</h3><img src="${cardPlayer.url}"><img src="${cardPC.url}"><h2>Sua carta era à do ${cardPlayer.nome}</h2>`;
       result.style.backgroundColor = "#d3bfbf52";
       result.style.border = "solid 3px white";
       result.style.borderRadius = "20px";
-      setInterval(function() {result.style.display = "none"},2000);
     }
-    //console.log(cardPlayer.atributes[atribSelected]);
     document.getElementById("btnSortear").disabled = false;
   }
 }
